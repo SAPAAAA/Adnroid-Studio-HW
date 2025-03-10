@@ -1,0 +1,19 @@
+2025-03-07T16:14:58.139Z [ctureModificationListener$Companion.initForProject] INFO ProjectStructureModificationListener is init for project Dessert Clicker
+2025-03-07T16:14:58.145Z [s.AiToolwindowsInitializer.reinitializeToolWindows] INFO AI state ENABLED
+2025-03-07T16:14:58.163Z [y.aiintellij.ui.panels.AIToolWindowLogPanel.<init>] INFO initializing a logs panel
+2025-03-07T16:14:58.166Z [els.AIToolWindowLogPanel.reloadAdditionalLogPanels] INFO reloading additional log panels
+2025-03-07T16:14:58.168Z [els.AIToolWindowLogPanel.reloadAdditionalLogPanels] INFO not in developer mode, skipping
+2025-03-07T16:14:58.240Z [intellij.services.AiInitializeManager.initializeAI] INFO IntelliJ listens web server on port: 63342
+2025-03-07T16:14:58.276Z [nfrastructureApiService.createInfrastructureFacade] INFO isInfrastructureDebug: false
+2025-03-07T16:14:58.277Z [nfrastructureApiService.createInfrastructureFacade] INFO Use port: 36413
+2025-03-07T16:14:58.316Z [.services.HeavyInfrastructureApiService.initialize] INFO Plugin context initialized
+2025-03-07T16:14:58.316Z [itializeManager$initializeAnalyzer$1.invokeSuspend] INFO initializing infrastructure
+2025-03-07T16:15:14.903Z [initializeInfrastructureInstance$1$1.invokeSuspend] INFO Infrastructure initialized
+2025-03-07T16:15:15.559Z [y.aiintellij.utils.logging.AiProjectLogger.cleanUp] INFO Clean up logs files was started
+2025-03-07T16:15:15.579Z [y.aiintellij.utils.logging.AiProjectLogger.cleanUp] INFO Clean up logs files was finished
+2025-03-07T16:15:18.500Z [tellij.services.PluginProjectService.createProject] INFO Project created
+2025-03-07T16:15:18.815Z [sistantNotificationService.onAssistantNotification] INFO TipsAvailabilityChanged notification is received by assistant
+2025-03-07T16:15:18.820Z [ices.aie.AieInitializer$initialize$1.invokeSuspend] INFO AIE integration isn't initialized, skipping listeners initialization
+2025-03-07T16:15:18.823Z [sistantNotificationService.onAssistantNotification] INFO QuickFixTipsUpdated notification is received by assistant
+2025-03-07T16:15:18.929Z [sistantNotificationService.onAssistantNotification] INFO TipsAvailabilityChanged notification is received by assistant
+2025-03-07T16:15:18.943Z [sistantNotificationService.onAssistantNotification] INFO QuickFixTipsUpdated notification is received by assistant

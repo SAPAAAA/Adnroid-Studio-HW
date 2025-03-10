@@ -1,0 +1,35 @@
+2025-03-06T15:16:51.622Z [ctureModificationListener$Companion.initForProject] INFO ProjectStructureModificationListener is init for project Dessert Clicker
+2025-03-06T15:16:51.637Z [s.AiToolwindowsInitializer.reinitializeToolWindows] INFO AI state ENABLED
+2025-03-06T15:16:51.837Z [intellij.services.AiInitializeManager.initializeAI] INFO IntelliJ listens web server on port: 63342
+2025-03-06T15:16:52.146Z [y.aiintellij.ui.panels.AIToolWindowLogPanel.<init>] INFO initializing a logs panel
+2025-03-06T15:16:52.165Z [els.AIToolWindowLogPanel.reloadAdditionalLogPanels] INFO reloading additional log panels
+2025-03-06T15:16:52.165Z [els.AIToolWindowLogPanel.reloadAdditionalLogPanels] INFO not in developer mode, skipping
+2025-03-06T15:16:52.293Z [y.aiintellij.ui.panels.AIToolWindowLogPanel.<init>] INFO initializing a logs panel
+2025-03-06T15:16:52.296Z [els.AIToolWindowLogPanel.reloadAdditionalLogPanels] INFO reloading additional log panels
+2025-03-06T15:16:52.296Z [els.AIToolWindowLogPanel.reloadAdditionalLogPanels] INFO not in developer mode, skipping
+2025-03-06T15:51:40.482Z [ructureTask$handleDownloadingError$1.invokeSuspend] WARN class java.nio.channels.UnresolvedAddressException
+2025-03-06T15:51:40.567Z [ructureTask$handleDownloadingError$1.invokeSuspend] WARN java.nio.channels.UnresolvedAddressException
+	at java.base/sun.nio.ch.Net.checkAddress(Unknown Source)
+	at java.base/sun.nio.ch.Net.checkAddress(Unknown Source)
+	at java.base/sun.nio.ch.SocketChannelImpl.checkRemote(Unknown Source)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(Unknown Source)
+	at io.ktor.network.sockets.SocketImpl.connect$ktor_network(SocketImpl.kt:32)
+	at io.ktor.network.sockets.ConnectUtilsJvmKt.connect(ConnectUtilsJvm.kt:19)
+	at io.ktor.network.sockets.TcpSocketBuilder.connect(TcpSocketBuilder.kt:38)
+	at io.ktor.client.engine.cio.ConnectionFactory.connect(ConnectionFactory.kt:24)
+	at io.ktor.client.engine.cio.Endpoint$connect$2$connect$1.invokeSuspend(Endpoint.kt:179)
+	at io.ktor.client.engine.cio.Endpoint$connect$2$connect$1.invoke(Endpoint.kt)
+	at io.ktor.client.engine.cio.Endpoint$connect$2$connect$1.invoke(Endpoint.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:100)
+	at kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:148)
+	at kotlinx.coroutines.TimeoutKt.withTimeoutOrNull(Timeout.kt:104)
+	at io.ktor.client.engine.cio.Endpoint.connect(Endpoint.kt:187)
+	at io.ktor.client.engine.cio.Endpoint.access$connect(Endpoint.kt:21)
+	at io.ktor.client.engine.cio.Endpoint$makeDedicatedRequest$1.invokeSuspend(Endpoint.kt:99)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:571)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:678)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:665)
+
