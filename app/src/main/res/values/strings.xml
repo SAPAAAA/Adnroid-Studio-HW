@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Alarm Clock</string>
+    <string name="edit_alarm">Edit alarm</string>
+    <string name="set_name">Set name</string>
+    <string name="default_alarm_name">After lunch pill</string>
+    <string name="pick_time">Pick Time</string>
+    <string name="set_alarm">Set Alarm</string>
+    <string name="alarm_set_for">Alarm set for %1$d:%2$d %3$s</string>
+    <string name="no_time_selected">No time selected</string>
+    <string name="no_alarm_app_available">No alarm app available</string>
+    <string name="select_time_first">Please select a time first!</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="time_separator">:</string>
+    <string name="alarm_message_label">Alarm Message</string>
+    <string name="alarm_message_error">Message cannot be empty</string>
+</resources>
