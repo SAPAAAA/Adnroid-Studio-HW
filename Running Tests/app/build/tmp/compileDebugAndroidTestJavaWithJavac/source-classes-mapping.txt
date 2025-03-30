@@ -1,4 +1,0 @@
-com/example/android/architecture/blueprints/todoapp/test/DataBindingTriggerClass.java
- com.example.android.architecture.blueprints.todoapp.test.DataBindingTriggerClass
-com/example/android/architecture/blueprints/todoapp/test/BuildConfig.java
- com.example.android.architecture.blueprints.todoapp.test.BuildConfig
