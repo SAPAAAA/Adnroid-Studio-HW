@@ -1,0 +1,12 @@
+# CodeSync won't sync the files in the .syncignore. It follows same format as .gitignore.
+.idea
+*.iml
+local.properties
+build
+.gradle
+# Eclipse project files
+.project
+.settings/	
+.classpath
+
+.ai
