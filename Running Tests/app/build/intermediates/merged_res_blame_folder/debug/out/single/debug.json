@@ -1,0 +1,150 @@
+[
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_statistics_100dp.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\ic_statistics_100dp.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\layout_tasks_frag.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\layout\\tasks_frag.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\navigation_nav_graph.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\navigation\\nav_graph.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\layout_taskdetail_frag.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\layout\\taskdetail_frag.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_list_completed_touch_feedback.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\list_completed_touch_feedback.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\layout_statistics_frag.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\layout\\statistics_frag.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\layout_nav_header.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\layout\\nav_header.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\layout_task_item.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\layout\\task_item.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_touch_feedback.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\touch_feedback.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_list.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\ic_list.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_trash_icon.png.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\trash_icon.png"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_statistics.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\ic_statistics.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_verified_user_96dp.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\ic_verified_user_96dp.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\font_opensans_regular.ttf.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\font\\opensans_regular.ttf"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\font_opensans_semibold.ttf.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\font\\opensans_semibold.ttf"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_menu.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\ic_menu.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\menu_taskdetail_fragment_menu.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\menu\\taskdetail_fragment_menu.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_logo_no_fill.png.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\logo_no_fill.png"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_add.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\ic_add.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\layout_tasks_act.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\layout\\tasks_act.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_assignment_turned_in_24dp.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\ic_assignment_turned_in_24dp.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\menu_drawer_actions.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\menu\\drawer_actions.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\menu_filter_tasks.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\menu\\filter_tasks.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_done.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\ic_done.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\menu_tasks_fragment_menu.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\menu\\tasks_fragment_menu.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\layout_addtask_frag.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\layout\\addtask_frag.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_statistics_24dp.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\ic_statistics_24dp.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_filter_list.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\ic_filter_list.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_drawer_item_color.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\drawer_item_color.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\font_opensans_font.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\font\\opensans_font.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_edit.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\ic_edit.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_check_circle_96dp.xml.flat",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\drawable\\ic_check_circle_96dp.xml"
+    }
+]

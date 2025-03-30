@@ -1,9 +1,0 @@
-2025-03-07T14:18:45.381Z [ctureModificationListener$Companion.initForProject] INFO ProjectStructureModificationListener is init for project Dessert Clicker
-2025-03-07T14:18:45.391Z [s.AiToolwindowsInitializer.reinitializeToolWindows] INFO AI state ENABLED
-2025-03-07T14:18:45.985Z [y.aiintellij.ui.panels.AIToolWindowLogPanel.<init>] INFO initializing a logs panel
-2025-03-07T14:18:46.004Z [els.AIToolWindowLogPanel.reloadAdditionalLogPanels] INFO reloading additional log panels
-2025-03-07T14:18:46.004Z [els.AIToolWindowLogPanel.reloadAdditionalLogPanels] INFO not in developer mode, skipping
-2025-03-07T14:18:46.164Z [y.aiintellij.ui.panels.AIToolWindowLogPanel.<init>] INFO initializing a logs panel
-2025-03-07T14:18:46.169Z [els.AIToolWindowLogPanel.reloadAdditionalLogPanels] INFO reloading additional log panels
-2025-03-07T14:18:46.169Z [els.AIToolWindowLogPanel.reloadAdditionalLogPanels] INFO not in developer mode, skipping
-2025-03-07T14:18:47.319Z [intellij.services.AiInitializeManager.initializeAI] INFO IntelliJ listens web server on port: 63342

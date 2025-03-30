@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
+            "map": [
+                {
+                    "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "from": {
+                        "startLines": "20,22",
+                        "startColumns": "4,4",
+                        "startOffsets": "987,1048",
+                        "endColumns": "57,41",
+                        "endOffsets": "1040,1085"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,113",
+                        "endColumns": "57,41",
+                        "endOffsets": "108,150"
+                    }
+                }
+            ]
+        }
+    ]
+}

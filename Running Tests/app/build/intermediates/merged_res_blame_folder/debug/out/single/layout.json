@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\taskdetail_frag.xml",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\layout\\taskdetail_frag.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\addtask_frag.xml",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\layout\\addtask_frag.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\statistics_frag.xml",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\layout\\statistics_frag.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\tasks_frag.xml",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\layout\\tasks_frag.xml"
+    },
+    {
+        "merged": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\task_item.xml",
+        "source": "E:\\School\\AndroidStudio\\advanced-android-testing\\app\\src\\main\\res\\layout\\task_item.xml"
+    }
+]
