@@ -13,6 +13,7 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.foundation.gestures.rememberTransformableState
@@ -22,6 +23,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -40,6 +42,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -53,6 +56,9 @@ import androidx.compose.material3.contentColorFor
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
@@ -65,6 +71,7 @@ import com.example.photoviewer.data.entities.Image
 import com.example.photoviewer.ui.theme.PhotoViewerTheme
 import com.example.photoviewer.utils.ImageUtils.createImageUri
 import com.example.photoviewer.viewmodel.PhotoViewModel
+import kotlin.math.abs
 
 class MainActivity : ComponentActivity() {
     
@@ -89,17 +96,33 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun PhotoThumbnail(image: Image, onClick: () -> Unit, onLongPress: () -> Unit) {
-    Image(
-        painter = rememberAsyncImagePainter(model = image.uri),
-        contentDescription = image.title,
+    Box(
         modifier = Modifier
             .padding(4.dp)
+            .aspectRatio(1f)
             .combinedClickable(
                 onClick = onClick,
                 onLongClick = onLongPress
             )
-            .aspectRatio(1f)
-    )
+    ) {
+        Image(
+            painter = rememberAsyncImagePainter(model = image.uri),
+            contentDescription = image.title,
+            modifier = Modifier.fillMaxSize()
+        )
+        
+        // Conditionally display the Star icon if the image is favorited
+        if (image.isFavorite) {
+            Icon(
+                imageVector = Icons.Filled.Star,
+                contentDescription = "Favorited",
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(4.dp),
+                tint = Color.Yellow
+            )
+        }
+    }
 }
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -121,7 +144,7 @@ fun PhotoGrid(images: List<Image>, onPhotoClick: (Image) -> Unit, onPhotoLongPre
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class) // Add OptIn for combinedClickable
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun PhotoDetail(
     image: Image,
@@ -129,51 +152,80 @@ fun PhotoDetail(
     onNavigatePrevious: () -> Unit,
     canNavigateNext: Boolean,
     canNavigatePrevious: Boolean,
-    onPhotoLongPress: () -> Unit // <-- Add new parameter
+    onPhotoLongPress: () -> Unit
 ) {
     var scale by remember { mutableFloatStateOf(1f) }
-    val transformState = rememberTransformableState { zoomChange, _, _ ->
+    var offset by remember { mutableStateOf(Offset.Zero) }
+    
+    val transformState = rememberTransformableState { zoomChange, offsetChange, rotationChange ->
         scale *= zoomChange
+        offset += offsetChange
     }
     
     Box(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
-            .transformable(state = transformState)
-            .pointerInput(canNavigateNext, canNavigatePrevious) { // Key on flags if needed
-                detectHorizontalDragGestures { _, dragAmount ->
-                    if (dragAmount < -50 && canNavigateNext) {
-                        onNavigateNext()
-                    } else if (dragAmount > 50 && canNavigatePrevious) {
-                        onNavigatePrevious()
+    ) {
+        Box(
+            modifier = Modifier
+                .align(Alignment.Center)
+                .fillMaxSize()
+                .graphicsLayer(
+                    scaleX = scale,
+                    scaleY = scale,
+                    translationX = offset.x,
+                    translationY = offset.y
+                )
+                // Apply the transformable modifier to handle gestures
+                .transformable(state = transformState)
+                // Handle horizontal drag for navigation
+                .pointerInput(canNavigateNext, canNavigatePrevious) {
+                    detectHorizontalDragGestures { _, dragAmount ->
+                         if (abs(dragAmount) > 10) {
+                             offset = Offset.Zero
+                         }
+                        if (dragAmount < -50 && canNavigateNext) {
+                            onNavigateNext()
+                        } else if (dragAmount > 50 && canNavigatePrevious) {
+                            onNavigatePrevious()
+                        }
                     }
                 }
-            }
-    ) {
-        Image(
-            painter = rememberAsyncImagePainter(image.uri),
-            contentDescription = image.title,
-            modifier = Modifier
-                .fillMaxSize()
-                .scale(scale)
-                // Add combinedClickable to the Image modifier
+                // Handle long press for options
                 .combinedClickable(
-                    onClick = {}, // Define an empty onClick if no action needed
-                    onLongClick = onPhotoLongPress // Call the provided lambda on long press
+                    onClick = {},
+                    onLongClick = onPhotoLongPress
                 )
-        )
+        ) {
+            Image(
+                painter = rememberAsyncImagePainter(image.uri),
+                contentDescription = image.title,
+                modifier = Modifier.fillMaxSize()
+            )
+            
+            // Conditionally display the Star icon if the image is favorited
+            if (image.isFavorite) {
+                Icon(
+                    imageVector = Icons.Filled.Star,
+                    contentDescription = "Favorited",
+                    modifier = Modifier
+                        .align(Alignment.TopEnd)
+                        .padding(8.dp),
+                    tint = Color.Yellow
+                )
+            }
+        }
         
-        // Navigation buttons remain the same
         IconButton(
-            onClick = onNavigatePrevious,
+            onClick = { scale = 1f; offset = Offset.Zero; onNavigatePrevious() }, // Reset zoom on nav
             modifier = Modifier.align(Alignment.CenterStart),
             enabled = canNavigatePrevious
         ) {
             Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Previous Photo")
         }
         IconButton(
-            onClick = onNavigateNext,
+            onClick = { scale = 1f; /* offset = Offset.Zero; */ onNavigateNext() }, // Reset zoom on nav
             modifier = Modifier.align(Alignment.CenterEnd),
             enabled = canNavigateNext
         ) {
@@ -182,7 +234,7 @@ fun PhotoDetail(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class) // For Scaffold
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PhotoGalleryApp(photoViewModel: PhotoViewModel = viewModel()) {
     val photos by photoViewModel.photos.collectAsState()
