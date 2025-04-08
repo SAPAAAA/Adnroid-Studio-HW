@@ -225,7 +225,7 @@ fun PhotoDetail(
             Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Previous Photo")
         }
         IconButton(
-            onClick = { scale = 1f; /* offset = Offset.Zero; */ onNavigateNext() }, // Reset zoom on nav
+            onClick = { scale = 1f; offset = Offset.Zero; onNavigateNext() }, // Reset zoom on nav
             modifier = Modifier.align(Alignment.CenterEnd),
             enabled = canNavigateNext
         ) {
