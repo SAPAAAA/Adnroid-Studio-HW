@@ -1,0 +1,11 @@
+package com.example.todolist.ui.tasklist
+
+import com.example.todolist.data.model.Task
+import com.example.todolist.utils.SortOrder
+
+data class TaskListUiState(
+	val tasks: List<Task> = emptyList(),
+	val isLoading: Boolean = false,
+	val userMessage: String? = null,
+	val sortOrder: SortOrder = SortOrder.BY_DATE
+)

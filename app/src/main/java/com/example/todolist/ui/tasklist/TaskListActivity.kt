@@ -1,0 +1,157 @@
+package com.example.todolist.ui.tasklist
+
+import android.app.DatePickerDialog
+import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.todolist.R
+import com.example.todolist.data.model.Task
+import com.example.todolist.databinding.ActivityTaskListBinding // Import ViewBinding
+import com.example.todolist.ui.tasklist.adapter.TaskAdapter
+import com.example.todolist.utils.SortOrder
+import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import java.util.* // Import Calendar and Date
+
+@AndroidEntryPoint
+class TaskListActivity : AppCompatActivity() {
+	
+	private lateinit var binding: ActivityTaskListBinding
+	private val viewModel: TaskListViewModel by viewModels()
+	private lateinit var taskAdapter: TaskAdapter
+	
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		binding = ActivityTaskListBinding.inflate(layoutInflater)
+		setContentView(binding.root)
+		setSupportActionBar(binding.toolbar)
+		
+		setupRecyclerView()
+		setupClickListeners()
+		observeViewModel()
+	}
+	
+	private fun setupRecyclerView() {
+		taskAdapter = TaskAdapter(
+			onTaskClicked = { task -> showTaskOptions(task) }, // Example: show options on click
+			onTaskLongClicked = { task -> confirmDeleteTask(task) }, // Example: delete on long click
+			onTaskCheckChanged = { task, isChecked ->
+				viewModel.toggleTaskCompletion(task)
+			}
+		)
+		binding.recyclerViewTasks.apply {
+			adapter = taskAdapter
+			layoutManager = LinearLayoutManager(this@TaskListActivity)
+		}
+	}
+	
+	private fun setupClickListeners() {
+		binding.buttonAddTask.setOnClickListener {
+			// Ask for due date first (optional)
+			showDatePicker { selectedTimestamp ->
+				val title = binding.editTextTaskName.text.toString().trim()
+				viewModel.addTask(title, null, selectedTimestamp) // Add null for description for now
+				binding.editTextTaskName.text.clear() // Clear input field
+			}
+		}
+	}
+	
+	private fun showTaskOptions(task: Task) {
+		// Example: Show a simple dialog with options
+		val options = arrayOf("Edit", "Delete")
+		AlertDialog.Builder(this)
+			.setTitle(task.title)
+			.setItems(options) { dialog, which ->
+				when (which) {
+					// 0 -> showTaskEditDialog(task)
+					1 -> confirmDeleteTask(task)
+				}
+				dialog.dismiss()
+			}
+			.setNegativeButton("Cancel", null)
+			.show()
+	}
+	
+	
+	private fun confirmDeleteTask(task: Task) {
+		AlertDialog.Builder(this)
+			.setTitle("Delete Task")
+			.setMessage("Are you sure you want to delete '${task.title}'?")
+			.setPositiveButton("Delete") { _, _ ->
+				viewModel.deleteTask(task)
+			}
+			.setNegativeButton("Cancel", null)
+			.show()
+	}
+	
+	private fun showDatePicker(onDateSelected: (Long?) -> Unit) {
+		val calendar = Calendar.getInstance()
+		DatePickerDialog(
+			this,
+			{ _, year, month, dayOfMonth ->
+				val selectedCalendar = Calendar.getInstance()
+				selectedCalendar.set(year, month, dayOfMonth)
+				onDateSelected(selectedCalendar.timeInMillis) // Pass selected date timestamp
+			},
+			calendar.get(Calendar.YEAR),
+			calendar.get(Calendar.MONTH),
+			calendar.get(Calendar.DAY_OF_MONTH)
+		).apply {
+			// Optionally add a "No Due Date" button or allow cancellation
+			setButton(DatePickerDialog.BUTTON_NEUTRAL, "No Due Date") { _, _ ->
+				onDateSelected(null) // Pass null for no due date
+			}
+		}.show()
+	}
+	
+	
+	private fun observeViewModel() {
+		lifecycleScope.launch {
+			repeatOnLifecycle(Lifecycle.State.STARTED) {
+				viewModel.uiState.collect { state ->
+					// Update Task List
+					taskAdapter.submitList(state.tasks)
+					
+					// Update Loading State
+					binding.progressBarLoading.visibility = if (state.isLoading) View.VISIBLE else View.GONE
+					
+					// Show User Messages (like errors or confirmations)
+					state.userMessage?.let { message ->
+						// Use Snackbar
+						Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
+						viewModel.userMessageShown()
+					}
+				}
+			}
+		}
+	}
+	
+	// --- Menu Handling ---
+	override fun onCreateOptionsMenu(menu: Menu): Boolean {
+		menuInflater.inflate(R.menu.options_menu, menu)
+		return true
+	}
+	
+	override fun onOptionsItemSelected(item: MenuItem): Boolean {
+		return when (item.itemId) {
+			R.id.action_sort_by_name -> {
+				viewModel.changeSortOrder(SortOrder.BY_NAME)
+				true
+			}
+			R.id.action_sort_by_date -> {
+				viewModel.changeSortOrder(SortOrder.BY_DATE)
+				true
+			}
+			else -> super.onOptionsItemSelected(item)
+		}
+	}
+}

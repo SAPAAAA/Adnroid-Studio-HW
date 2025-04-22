@@ -1,0 +1,81 @@
+// Suggested path: app/src/main/kotlin/com/yourcompany/taskapp/ui/tasklist/adapter/TaskAdapter.kt
+package com.example.todolist.ui.theme.tasklist.adapter
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.example.todolist.data.model.Task
+import com.example.todolist.databinding.ListItemTaskBinding // Import ViewBinding class
+import java.text.SimpleDateFormat
+import java.util.*
+
+class TaskAdapter(
+	private val onTaskClicked: (Task) -> Unit,
+	private val onTaskLongClicked: (Task) -> Unit, // Example: for deletion
+	private val onTaskCheckChanged: (Task, Boolean) -> Unit
+) : ListAdapter<Task, TaskAdapter.TaskViewHolder>(TaskDiffCallback()) {
+	
+	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
+		val binding = ListItemTaskBinding.inflate(
+			LayoutInflater.from(parent.context),
+			parent,
+			false
+		)
+		return TaskViewHolder(binding)
+	}
+	
+	override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
+		val task = getItem(position)
+		holder.bind(task, onTaskClicked, onTaskLongClicked, onTaskCheckChanged)
+	}
+	
+	// --- ViewHolder ---
+	class TaskViewHolder(private val binding: ListItemTaskBinding) :
+		RecyclerView.ViewHolder(binding.root) {
+		
+		private val dateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
+		
+		fun bind(
+			task: Task,
+			onTaskClicked: (Task) -> Unit,
+			onTaskLongClicked: (Task) -> Unit,
+			onTaskCheckChanged: (Task, Boolean) -> Unit
+		) {
+			binding.textViewTaskTitle.text = task.title
+			binding.checkboxTaskCompleted.isChecked = task.isCompleted
+			
+			binding.textViewTaskDueDate.text = task.dueDate?.let {
+				"Due: ${dateFormat.format(Date(it))}"
+			} ?: "No due date" // Handle null due date
+			
+			// Handle clicks without triggering checkbox change listener immediately
+			binding.root.setOnClickListener { onTaskClicked(task) }
+			binding.root.setOnLongClickListener {
+				onTaskLongClicked(task)
+				true // Consume long click
+			}
+			
+			// Handle checkbox changes
+			binding.checkboxTaskCompleted.setOnCheckedChangeListener { _, isChecked ->
+				// Avoid triggering if it's just programmatic change during bind
+				if (binding.checkboxTaskCompleted.isPressed || binding.checkboxTaskCompleted.isFocused) {
+					onTaskCheckChanged(task, isChecked)
+				}
+			}
+		}
+	}
+}
+
+// --- DiffUtil Callback ---
+class TaskDiffCallback : DiffUtil.ItemCallback<Task>() {
+	override fun areItemsTheSame(oldItem: Task, newItem: Task): Boolean {
+		return oldItem.id == newItem.id
+	}
+	
+	override fun areContentsTheSame(oldItem: Task, newItem: Task): Boolean {
+		// Compare relevant fields
+		return oldItem == newItem
+	}
+}
