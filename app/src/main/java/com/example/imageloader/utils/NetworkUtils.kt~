@@ -1,0 +1,36 @@
+package com.example.imageloader.utils
+
+import android.Manifest
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
+import androidx.annotation.RequiresPermission
+
+object NetworkUtils { // Use 'object' for a singleton utility class
+	
+	@RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
+	fun isNetworkAvailable(context: Context?): Boolean {
+		context ?: return false // Return false if context is null
+		
+		// Use getSystemService with generic type for cleaner code
+		val connectivityManager =
+			context.getSystemService(Context.CONNECTIVITY_SERVICE) as? ConnectivityManager
+				?: return false // Return false if service is unavailable
+		
+		return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			val network = connectivityManager.activeNetwork
+			val capabilities = connectivityManager.getNetworkCapabilities(network)
+			capabilities != null && (
+					capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+							capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
+							capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
+					)
+		} else {
+			// Use deprecated method for older versions safely
+			@Suppress("DEPRECATION")
+			val networkInfo = connectivityManager.activeNetworkInfo
+			networkInfo?.isConnected ?: false
+		}
+	}
+}

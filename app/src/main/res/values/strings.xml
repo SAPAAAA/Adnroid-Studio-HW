@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Image Loader App</string>
+
+    <string name="edit_text_hint">Enter Image URL</string>
+    <string name="load_button_text">Load Image</string>
+    <string name="image_view_desc">Loaded image</string>
+
+    <string name="status_idle">Enter a URL and press Load</string>
+    <string name="status_loading">Loading…</string>
+    <string name="status_error">Failed to load image. Check URL and connection.</string>
+    <string name="status_no_internet">No internet connection.</string>
+    <string name="status_success">Image loaded successfully.</string>
+    <string name="status_invalid_url">Invalid URL entered.</string>
+
+
+    <string name="notification_channel_name">Background Service</string>
+    <string name="notification_channel_description">Notifications from the background service</string>
+    <string name="notification_title">Image Loader Service</string>
+    <string name="notification_text">Image Loader Service is running</string>
+    <string name="notification_permission_denied_message">Notification permission was denied. Some features may not work as expected.</string>
+</resources>
